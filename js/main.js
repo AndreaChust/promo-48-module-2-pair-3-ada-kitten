@@ -1,5 +1,5 @@
 "use strict";
-const list = documento.queryselector (".js-list");
+const list = document.queryselector (".js-list");
 const kittenOne = `<li class="card">
 <article>
   <img
