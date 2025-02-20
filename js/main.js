@@ -1,6 +1,9 @@
 "use strict";
-const list = document.queryselector (".js-list");
-const kittenOne = `<li class="card">
+const sister ="Marta;"
+console.log(sister);
+
+const list = document.querySelector(".js-list");
+list.innerHTML = `<li class="card">
 <article>
   <img
     class="card_img"
@@ -17,7 +20,7 @@ const kittenOne = `<li class="card">
 </article>
 </li>`;
 
-const kittenTwo = `<li class="card">
+list.innerHTML = `<li class="card">
 <article>
   <img
     class="card_img"
