@@ -1,9 +1,7 @@
 "use strict";
-const sister ="Marta;"
-console.log(sister);
 
 const list = document.querySelector(".js-list");
-list.innerHTML = `<li class="card">
+const kittenOne = `<li class="card">
 <article>
   <img
     class="card_img"
@@ -20,11 +18,11 @@ list.innerHTML = `<li class="card">
 </article>
 </li>`;
 
-list.innerHTML = `<li class="card">
+const kittenTwo = `<li class="card">
 <article>
   <img
     class="card_img"
-    src="https://dev.adalab.es/gato-siames.webp"
+    src="https://dev.adalab.es/sphynx-gato.webp" alt="sphynx-cat"
     alt="gatito"
   />
   <h3 class="card_title">Fiona</h3>
@@ -37,12 +35,11 @@ list.innerHTML = `<li class="card">
 </article>
 </li>`;
 
-
 const kittenThree = `<li class="card">
 <article>
   <img
     class="card_img"
-    src="https://dev.adalab.es/gato-siames.webp"
+    src="https://dev.adalab.es/maine-coon-cat.webp" alt="maine-coon-cat"
     alt="gatito"
   />
   <h3 class="card_title">Cielo</h3>
@@ -54,3 +51,13 @@ const kittenThree = `<li class="card">
    </p>
 </article>
 </li>`;
+
+list.innerHTML = kittenOne + kittenTwo + kittenThree;
+
+const button = document.querySelector(".js-btn-add");
+const newform = document.querySelector(".js-new-form");
+button.addEventListener("click", () => {
+  newform.classList.remove("collapsed");
+  console.log("gatitos");
+  
+})
