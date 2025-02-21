@@ -77,7 +77,7 @@ const kittenDesc3 = "Tienen la cabeza cuadrada y los ojos simétricos, por lo qu
 searchButton.addEventListener("click", (ev) => {
   ev.preventDefault();
   const SearchText = input_in_search_desc.value;
-  if (kittenDesc1.includes(descrSearchText)) {
+  if (kittenDesc1.includes(SearchText)) {
      
 
   }
