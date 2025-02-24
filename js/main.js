@@ -1,15 +1,19 @@
 "use strict";
 
 const list = document.querySelector(".js-list");
-const kittenOne = `<li class="card">
+const kittenImg1 = "https://dev.adalab.es/gato-siames.webp";
+const kittenName1 = "Anastacio";
+const kittenRace1 = "Siamés";
+const kittenOne = `<li class="card js-kity1">
+
 <article>
   <img
     class="card_img"
-    src="https://dev.adalab.es/gato-siames.webp"
+    src=${kittenImg1}
     alt="gatito"
   />
-  <h3 class="card_title">Anastacio</h3>
-  <h4 class="card_race">Siamés</h4>
+  <h3 class="card_title">${kittenName1}</h3>
+  <h4 class="card_race">${kittenRace1}</h4>
   <p class="card_description">
             Porte elegante, su patrón de color tan característico y sus ojos
             de un azul intenso, pero su historia se remonta a Asía al menos
@@ -18,7 +22,7 @@ const kittenOne = `<li class="card">
 </article>
 </li>`;
 
-const kittenTwo = `<li class="card">
+const kittenTwo = `<li class="card js-kity2">
 <article>
   <img
     class="card_img"
@@ -34,8 +38,11 @@ const kittenTwo = `<li class="card">
    </p>
 </article>
 </li>`;
+const kittenImg2 = "https://dev.adalab.es/sphynx-gato.webp";
+const kittenName2 = "Fiona";
+const kittenRace2 = "Sphynx";
 
-const kittenThree = `<li class="card">
+const kittenThree = `<li class="card js-kity3">
 <article>
   <img
     class="card_img"
@@ -51,8 +58,14 @@ const kittenThree = `<li class="card">
    </p>
 </article>
 </li>`;
+const kittenImg3 = "https://dev.adalab.es/maine-coon-cat.webp";
+const kittenName3 = "Cielo";
+const kittenRace3 = "Main Coon";
 
 list.innerHTML = kittenOne + kittenTwo + kittenThree;
+const kity1 = document.querySelector(".js-kity1")
+const kity2 = document.querySelector(".js-kity2");
+const kity3 = document.querySelector(".js-kity3");
 
 const button = document.querySelector(".js-btn-add");
 const newform = document.querySelector(".js-new-form");
@@ -72,17 +85,22 @@ const kittenDesc2 = "Produce fascinación y curiosidad. Exótico, raro, bello, e
 const kittenDesc3 = "Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.";
 
 
-
-
-searchButton.addEventListener("click", (ev) => {
-  ev.preventDefault();
-  const SearchText = input_in_search_desc.value;
-  if (kittenDesc1.includes(SearchText)) {
-     
+searchButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  const descText = SearchText.value;
+  if (kittenDesc1.includes(descText)) {
+      kity2.classList.add("collapsed");
+      kity3.classList.add("collapsed");
+  }
+  if (kittenDesc2.includes(descText)) {
+    kity1.classList.add("collapsed");
+    kity3.classList.add("collapsed");
+  }
+  if (kittenDesc3.includes(descText)){
+    kity2.classList.add("collapsed");
+    kity1.classList.add("collapsed");
 
   }
-
-  
 });
 
 
