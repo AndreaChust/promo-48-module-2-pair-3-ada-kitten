@@ -22,15 +22,18 @@ const kittenOne = `<li class="card js-kity1">
 </article>
 </li>`;
 
+const kittenImg2 = "https://dev.adalab.es/sphynx-gato.webp";
+const kittenName2 = "Fiona";
+const kittenRace2 = "Sphynx";
 const kittenTwo = `<li class="card js-kity2">
 <article>
   <img
     class="card_img"
-    src="https://dev.adalab.es/sphynx-gato.webp" alt="sphynx-cat"
+    src=${kittenImg2}
     alt="gatito"
   />
-  <h3 class="card_title">Fiona</h3>
-  <h4 class="card_race">Sphynx</h4>
+  <h3 class="card_title">${kittenName2}</h3>
+  <h4 class="card_race">${kittenRace2}</h4>
   <p class="card_description">
             Produce fascinación y curiosidad. Exótico, raro, bello, extraño…
             hasta con pinta de alienígena han llegado a definir a esta raza
@@ -38,19 +41,21 @@ const kittenTwo = `<li class="card js-kity2">
    </p>
 </article>
 </li>`;
-const kittenImg2 = "https://dev.adalab.es/sphynx-gato.webp";
-const kittenName2 = "Fiona";
-const kittenRace2 = "Sphynx";
 
+
+
+const kittenImg3 = "https://dev.adalab.es/maine-coon-cat.webp";
+const kittenName3 = "Cielo";
+const kittenRace3 = "Main Coon";
 const kittenThree = `<li class="card js-kity3">
 <article>
   <img
     class="card_img"
-    src="https://dev.adalab.es/maine-coon-cat.webp" alt="maine-coon-cat"
+    src=${kittenImg3}
     alt="gatito"
   />
-  <h3 class="card_title">Cielo</h3>
-  <h4 class="card_race">Main Coon</h4>
+  <h3 class="card_title">${kittenName3}</h3>
+  <h4 class="card_race">${kittenRace3}</h4>
   <p class="card_description">
              Tienen la cabeza cuadrada y los ojos simétricos, por lo que su
             bella mirada se ha convertido en una de sus señas de identidad.
@@ -58,9 +63,7 @@ const kittenThree = `<li class="card js-kity3">
    </p>
 </article>
 </li>`;
-const kittenImg3 = "https://dev.adalab.es/maine-coon-cat.webp";
-const kittenName3 = "Cielo";
-const kittenRace3 = "Main Coon";
+
 
 list.innerHTML = kittenOne + kittenTwo + kittenThree;
 const kity1 = document.querySelector(".js-kity1")
