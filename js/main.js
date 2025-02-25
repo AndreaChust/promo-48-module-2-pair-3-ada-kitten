@@ -1,5 +1,9 @@
 "use strict";
 
+
+
+
+
 const list = document.querySelector(".js-list");
 const kittenImg1 = "https://dev.adalab.es/gato-siames.webp";
 const kittenName1 = "Anastacio";
@@ -21,6 +25,19 @@ const kittenOne = `<li class="card js-kity1">
    </p>
 </article>
 </li>`;
+
+
+/*Pasos en humano:
+encapsular el codigo que pinta en una funcion.
+-hacer la función
+*/
+
+function renderkitten(url, desc, name, race) {
+  
+
+}
+
+
 
 const kittenImg2 = "https://dev.adalab.es/sphynx-gato.webp";
 const kittenName2 = "Fiona";
@@ -64,6 +81,19 @@ const kittenThree = `<li class="card js-kity3">
 </article>
 </li>`;
 
+/*
+-seleccionar boton;
+-cuando la usaria haga click en +:
+    -se muestra el formulario.
+
+seleccionar boton cancelar,
+   cuando la usuaria haga click en el boton e cancelar:
+   -se esconde el formulario: 
+
+*/
+
+
+
 
 list.innerHTML = kittenOne + kittenTwo + kittenThree;
 const kity1 = document.querySelector(".js-kity1")
@@ -72,11 +102,21 @@ const kity3 = document.querySelector(".js-kity3");
 
 const button = document.querySelector(".js-btn-add");
 const newform = document.querySelector(".js-new-form");
-button.addEventListener("click", () => {
+
+function showNewCatForm() {
   newform.classList.remove("collapsed");
-  console.log("gatitos");
-  
-})
+}
+button.addEventListener("click", showNewCatForm);
+
+
+const cancel = document.querySelector(".js-btn-cancel");
+
+function hideNewCatForm() {
+  newform.classList.add("collapsed");
+}
+cancel.addEventListener("click", hideNewCatForm);
+
+
 
 const searchButton = document.querySelector(".js_button-search");
 const SearchText = document.querySelector(".js_in_search_desc");
