@@ -1,9 +1,5 @@
 "use strict";
 
-
-
-
-
 const list = document.querySelector(".js-list");
 const kittenImg1 = "https://dev.adalab.es/gato-siames.webp";
 const kittenName1 = "Anastacio";
@@ -33,10 +29,8 @@ encapsular el codigo que pinta en una funcion.
 */
 
 function renderkitten(url, desc, name, race) {
-  
 
 }
-
 
 
 const kittenImg2 = "https://dev.adalab.es/sphynx-gato.webp";
@@ -93,8 +87,6 @@ seleccionar boton cancelar,
 */
 
 
-
-
 list.innerHTML = kittenOne + kittenTwo + kittenThree;
 const kity1 = document.querySelector(".js-kity1")
 const kity2 = document.querySelector(".js-kity2");
@@ -128,26 +120,61 @@ const kittenDesc2 = "Produce fascinación y curiosidad. Exótico, raro, bello, e
 const kittenDesc3 = "Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.";
 
 
-searchButton.addEventListener("click", (event) => {
+// searchButton.addEventListener("click", (event) => {
+//   event.preventDefault();
+//   const descText = SearchText.value;
+//   if (kittenDesc1.includes(descText)) {
+//       kity2.classList.add("collapsed");
+//       kity3.classList.add("collapsed");
+//   }
+//   if (kittenDesc2.includes(descText)) {
+//     kity1.classList.add("collapsed");
+//     kity3.classList.add("collapsed");
+//   }
+//   if (kittenDesc3.includes(descText)){
+//     kity2.classList.add("collapsed");
+//     kity1.classList.add("collapsed");
+
+//   }
+// });
+
+//* Seleccionar elementos con el query; 
+// Cuando la usuaria haga click en buscar:
+// -guardar el valor del texto que introduce la usuaria (elegante)
+  // Si la descripcion escrita coincide con el texto del gatito 1
+  // {oculta gatitos 2 y 3}
+  // Si la descripcion escrita coincide con el texto del gatito 2
+// {oculta gatitos 1 y 3}
+// Si la descripcion  escrita coincide con el texto del gatito 3
+// {oculta gatitos 1 y 2};
+// Cuando/Si el input buscar este vacío:
+// muestra todos los gatitos
+// cuando le damos al boton buscar sale Anastacio
+// Si el input descripcion esta vacio elimina la clase collapsed de todos
+
+const filterKitten = (event) => {
   event.preventDefault();
   const descText = SearchText.value;
-  if (kittenDesc1.includes(descText)) {
-      kity2.classList.add("collapsed");
-      kity3.classList.add("collapsed");
-  }
-  if (kittenDesc2.includes(descText)) {
+    if (descText === "") {
+      kity1.classList.remove("collapsed");
+      kity2.classList.remove("collapsed");
+      kity3.classList.remove("collapsed");
+    } else if (kittenDesc1.includes(descText)){
+    kity1.classList.remove("collapsed");
+    kity2.classList.add("collapsed");
+    kity3.classList.add("collapsed");
+  } else if (kittenDesc2.includes(descText)){
+    kity2.classList.remove("collapsed");
     kity1.classList.add("collapsed");
     kity3.classList.add("collapsed");
-  }
-  if (kittenDesc3.includes(descText)){
+  } else if (kittenDesc3.includes(descText)){
+    kity3.classList.remove("collapsed");
     kity2.classList.add("collapsed");
     kity1.classList.add("collapsed");
-
   }
-});
+}
 
-
-
+searchButton.addEventListener("click", filterKitten);
 
 
 
