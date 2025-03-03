@@ -1,9 +1,11 @@
 "use strict";
 
+
 const list = document.querySelector(".js-list");
 const kittenImg1 = "https://dev.adalab.es/gato-siames.webp";
 const kittenName1 = "Anastacio";
 const kittenRace1 = "Siamés";
+const kittenDesc1 = "Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.";
 
 
 
@@ -18,12 +20,38 @@ encapsular el codigo que pinta en una funcion.
 const kittenImg2 = "https://dev.adalab.es/sphynx-gato.webp";
 const kittenName2 = "Fiona";
 const kittenRace2 = "Sphynx";
+const kittenDesc2 = "Produce fascinación y curiosidad. Exótico, raro, bello, extraño…hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.";
 
 
 
 const kittenImg3 = "https://dev.adalab.es/maine-coon-cat.webp";
 const kittenName3 = "Cielo";
 const kittenRace3 = "Main Coon";
+const kittenDesc3 = "Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta."
+
+const kittenData_1 = {
+  image: kittenImg1,
+  name: kittenName1,
+  race: kittenRace1,
+  description: kittenDesc1,
+}
+
+const kittenData_2 = {
+  image: kittenImg2,
+  name: kittenName2,
+  race: kittenRace2,
+  description: kittenDesc2,
+}
+
+const kittenData_3 = {
+  image: kittenImg3,
+  name: kittenName3,
+  race: kittenRace3,
+  description: kittenDesc3,
+}
+
+const kittenDataList = [kittenData_1, kittenData_2, kittenData_3];
+
 
 
 /*
@@ -36,29 +64,24 @@ seleccionar boton cancelar,
    -se esconde el formulario: 
 
 */
-function renderkitten(url, desc, name, race) {
+function renderkitten(objectKitten) {
        return `<li class="card js-kity3">
 <article>
   <img
     class="card_img"
-    src=${url}
+    src=${objectKitten.image}
     alt="gatito"
   />
-  <h3 class="card_title">${name}</h3>
-  <h4 class="card_race">${race}</h4>
-  <p class="card_description">
-             Tienen la cabeza cuadrada y los ojos simétricos, por lo que su
-            bella mirada se ha convertido en una de sus señas de identidad.
-            Sus ojos son grandes y las orejas resultan largas y en punta.
+  <h3 class="card_title">${objectKitten.name}</h3>
+  <h4 class="card_race">${objectKitten.race}</h4>
+  <p class="card_description">${objectKitten.description}
    </p>
 </article>
 </li>`;
 }
 
-//Tenemos que hacer las constantes con las descripciones y terminar el renderkitten, cuando tengamos eso, tenemos que hacer el ejercicio de objetos.
-
-
-list.innerHTML = renderkitten(kittenImg1, undefined, kittenName1, kittenRace1) + renderkitten()
+list.innerHTML = renderkitten(kittenData_1) + renderkitten(kittenData_2) + renderkitten(kittenData_3); 
+// Llamamos a la funcion todas las veces que necesitemos con distintos parámetros.
 
 const kity1 = document.querySelector(".js-kity1")
 const kity2 = document.querySelector(".js-kity2");
@@ -85,11 +108,6 @@ cancel.addEventListener("click", hideNewCatForm);
 const searchButton = document.querySelector(".js_button-search");
 const SearchText = document.querySelector(".js_in_search_desc");
 
-const kittenDesc1 = "Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy posiblemente.";
-
-const kittenDesc2 = "Produce fascinación y curiosidad. Exótico, raro, bello, extraño hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.";
-
-const kittenDesc3 = "Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.";
 
 //* Seleccionar elementos con el query; 
 // Cuando la usuaria haga click en buscar:
